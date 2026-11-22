@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#041114" />
+    <meta
+      name="description"
+      content="SKYBOUND — a low-poly 3D flight simulator with an eight-mission story campaign across coral islands, a city skyline, a dune sea and mountain highlands. Built with Three.js."
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>SKYBOUND · Low-Poly Flight Simulator</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23062024'/%3E%3Cpath d='M32 8l4 18 20 7 2 4-22-2-2 12 8 6v2l-10-3-10 3v-2l8-6-2-12-22 2 2-4 20-7z' fill='%23ff8a4c'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="dist/game.css">
+</head>
+  <body>
+    <canvas id="viewport" aria-label="3D flight simulator viewport"></canvas>
+    <div id="ui-root"></div>
+
+    <div id="boot-fallback" aria-live="polite">
+      <div class="boot-grid"></div>
+      <div class="boot-center">
+        <div class="boot-rings"><i></i><i></i><i></i></div>
+        <div class="boot-fallback-title">SKY<span>BOUND</span></div>
+        <div class="boot-fallback-sub">LOW-POLY FLIGHT OPERATIONS · BOOTING THREE.JS</div>
+
+        <div class="boot-load">
+          <div class="boot-load-track"><i id="boot-load-fill"></i></div>
+          <div class="boot-load-meta">
+            <span id="boot-load-label">INITIALISING FLIGHT SYSTEMS</span>
+            <b id="boot-load-percent">0%</b>
+          </div>
+        </div>
+
+        <ul class="boot-tips">
+          <li class="boot-tip">TIP · Press <b>V</b> to deploy flares against incoming missiles</li>
+          <li class="boot-tip">TIP · The <b>01</b> button cycles chase / overhead / cockpit views</li>
+          <li class="boot-tip">TIP · Tilt your device to steer — the gyroscope acts as the yoke</li>
+        </ul>
+
+        <div class="boot-spinner"></div>
+      </div>
+      <div class="boot-corner tl"></div>
+      <div class="boot-corner tr"></div>
+      <div class="boot-corner bl"></div>
+      <div class="boot-corner br"></div>
+    </div>
+
+    <noscript>
+      <div
+        style="
+          position: fixed;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          background: #041114;
+          color: #dffff6;
+          font-family: sans-serif;
+          text-align: center;
+          padding: 24px;
+        "
+      >
+        SKYBOUND needs JavaScript and WebGL. Enable JavaScript and reload.
+      </div>
+    </noscript>
+
+    <script src="dist/game.js"></script>
+</body>
+</html>

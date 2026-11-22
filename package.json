@@ -1,0 +1,39 @@
+{
+  "name": "skybound-flight-sim",
+  "version": "2.1.0",
+  "description": "SKYBOUND \u2014 a low-poly 3D flight simulator over a procedural island archipelago, built with Three.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=iife --minify --sourcemap --outfile=dist/game.js",
+    "build:dev": "esbuild src/main.js --bundle --format=iife --sourcemap --outfile=dist/game.js",
+    "build:standalone": "node scripts/build-standalone.mjs",
+    "build:all": "npm run build && npm run build:standalone",
+    "test": "npm run test:core && npm run test:career && npm run test:hud && npm run test:world && npm run test:maps && npm run test:game && npm run test:mobile && npm run test:combat && npm run test:pixel",
+    "test:core": "node tests/test-core.mjs",
+    "test:career": "node tests/test-career.mjs",
+    "test:hud": "node tests/test-hud.mjs",
+    "test:world": "node tests/test-world.mjs",
+    "test:game": "node tests/test-game.mjs",
+    "test:mobile": "node tests/test-mobile.mjs",
+    "test:combat": "node tests/test-combat.mjs",
+    "test:pixel": "node tests/test-pixel.mjs",
+    "test:world:high": "QUALITY=high node tests/test-world.mjs",
+    "test:maps": "node tests/test-maps.mjs"
+  },
+  "keywords": [
+    "threejs",
+    "flight-simulator",
+    "low-poly",
+    "webgl",
+    "procedural"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.24.0",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.1"
+  }
+}
